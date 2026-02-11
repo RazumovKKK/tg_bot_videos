@@ -11,7 +11,11 @@ app = FastAPI()
 
 @app.get("/sql/{prompt}")
 async def get_sql(prompt: str):
-    sql_query = request_deepseek(prompt)
-    return execute_sql_query(sql_query)
+    sql_query = await request_deepseek(prompt)
+    print(sql_query)
+    result = await execute_sql_query(sql_query)
+    return result
     
+
+
 

@@ -24,7 +24,7 @@ dp = Dispatcher()
 @dp.message(F.text)
 async def get_theme_news(message:Message):
 
-    string = Get_Requests.make_request(message.text)
+    string = await Get_Requests.make_request(message.text)
     await message.answer(str(string))
 
 
